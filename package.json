@@ -12,6 +12,10 @@
     "email": "diego.zoracky@gmail.com",
     "url": "https://github.com/DiegoZoracKy/"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DiegoZoracKy/magicli"
+  },
   "keywords": [
     "bin",
     "cli",
