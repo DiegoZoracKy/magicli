@@ -1,0 +1,33 @@
+{
+  "name": "magicli",
+  "version": "0.0.6",
+  "description": "Automagically generates command-line interfaces (CLI) for any module. Expected options and help sections are created automatically based on parameters names, with support to async.",
+  "main": "lib/magicli.js",
+  "scripts": {
+    "test": "mocha ./tests/main.test.js",
+    "test:all": "mocha ./tests -b"
+  },
+  "author": {
+    "name": "Diego ZoracKy",
+    "email": "diego.zoracky@gmail.com",
+    "url": "https://github.com/DiegoZoracKy/"
+  },
+  "keywords": [
+    "bin",
+    "cli",
+    "async",
+    "simple",
+    "command-line",
+    "interface"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cliss": "0.0.2",
+    "find-up": "^2.1.0",
+    "for-each-property": "0.0.4",
+    "inspect-property": "0.0.6"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
+}

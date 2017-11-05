@@ -1,0 +1,8 @@
+{
+  "name": "function-simple-concat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Test function-simple-concat",
+  "main": "lib/index.js",
+  "bin": "bin/cli.js"
+}

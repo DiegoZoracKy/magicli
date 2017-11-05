@@ -1,0 +1,8 @@
+{
+  "name": "general-test-module",
+  "version": "0.0.1",
+  "private": true,
+  "description": "general-test-module description",
+  "main": "./lib/index.js",
+  "bin": "./bin/cli.js"
+}
