@@ -299,6 +299,6 @@ magicli({
 
 ## Tests
 
-There is another repository called MagiCLI Test Machine, where many real published modules are being successfully tested. As the idea is to keep increasing the number of real modules tested, it made more sense to maintain a separated repository for that, instead of being constantly increasing the size of MagiCLI itself over time. I ask you to contribute with the growing numbers of those tests by adding your own module there via a pull request.
+There is another repository called [MagiCLI Test Machine](https://github.com/DiegoZoracKy/magicli-test-machine), where many real published modules are being successfully tested. As the idea is to keep increasing the number of real modules tested, it made more sense to maintain a separated repository for that, instead of being constantly increasing the size of MagiCLI itself over time. I ask you to contribute with the growing numbers of those tests by adding your own module there via a pull request.
 
 If you find some case that isn't being handled properly, please open an *issue* or feel free to create a PR ;)
