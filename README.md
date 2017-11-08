@@ -116,7 +116,7 @@ Options:
   --p3
 ```
 
-`$ your-module nested-method --help`:
+`$ your-module nested-method --help` returns:
 
 ```bash
 Usage:
@@ -128,7 +128,7 @@ Options:
   --param
 ```
 
-Calling *mainMethod* without any parameter
+Calling *mainMethod* without any parameter:
 `$ your-module mainMethod`
 
 results in:
@@ -139,6 +139,8 @@ While defining the parameter for *nested-method*:
 
 would return:
 ` nested method param value is: "paramValue"`
+
+Note: Nested methods/properties will be turned into commands separated by `-`, and it can be configurable via options (`subcommandDelimiter`).
 
 ## Usage Options
 `magicli({ commands = {}, validateRequiredParameters = false, help = {}, version = {}, pipe = {}, enumerability = 'enumerable', subcommandDelimiter = '-'})`
