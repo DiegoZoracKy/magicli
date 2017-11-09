@@ -275,6 +275,8 @@ To transform the data being input, before it is passed in to the main command ac
 
 Note: **stdin** and **before** must always return *args*, and **after** must always return *result*, as these values will be passed in for the next function in the pipeline.
 
+If needed, a more thorough guide about this section can be found at [cliss](https://github.com/DiegoZoracKy/cliss) (as this is the module under the hood to handle that)
+
 A full featured use of the module would look like:
 
 ```javascript
