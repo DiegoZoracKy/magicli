@@ -300,6 +300,86 @@ magicli({
 });
 ```
 
+## Example
+
+To better explain with an example, let's get the following module and configure it with MagiCLI to:
+
+ * Define **p1** as `String` (*mainMethod*)
+ * Write a description for **p2** (*mainMethod*)
+ * Define **p3** as required (*mainMethod*)
+ * Get **p2** from stdin (*mainMethod*)
+ * Use **before** (command) to upper case **param** (*nested-method*)
+ * Use **after** (command) to JSON.stringify the result of (*nested-method*)
+ * Use **after** (options) to decorate all outputs (*nested-method*)
+
+**module** ("main" property of package.json)
+```javascript
+'use strict';
+
+module.exports = {
+	mainMethod: (p1, p2, { p3 = 'p3Default' } = {}) => `${p1}-${p2}-${p3}`,
+	nested: {
+		method: param => {
+
+			// Example of a Promise being handled
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve({ param });
+				}, 2000);
+			});
+		}
+	}
+};
+```
+
+**magicli.js** ("bin" property of package.json)
+```javascript
+#!/usr/bin/env node
+
+
+require('../magicli')({
+	commands: {
+		'mainMethod': {
+			options: [{
+				name: 'p1',
+				description: 'Number will be converted to String',
+				type: 'String'
+			}, {
+				name: 'p2',
+				description: 'This parameter can be defined via stdin'
+			}, {
+				name: 'p3',
+				required: true
+			}],
+			pipe: {
+				stdin: (stdinValue, args, positionalArgs, argsAfterEndOfOptions) => {
+					args.p2 = stdinValue;
+					return args;
+				}
+			}
+		},
+		'nested-method': {
+			options: [{
+				name: 'param',
+				description: 'Wait for it...'
+			}],
+			pipe: {
+				before: (args, positionalArgs, argsAfterEndOfOptions) => {
+					if (args.param) {
+						args.param = args.param.toUpperCase();
+					}
+					return args;
+				},
+
+				after: JSON.stringify
+			}
+		}
+	},
+	pipe: {
+		after: (result, positionalArgs, argsAfterEndOfOptions) => `======\n${result}\n======`
+	}
+});
+```
 
 ## Tests
 
