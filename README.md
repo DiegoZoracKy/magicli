@@ -60,6 +60,8 @@ The program will be expecting options with the same name as the parameters decla
 
 `$ your-module --param2="K" --param1="Z"` would result in: `ZK`.
 
+Important: MagiCLI requires the module in order to analyse it, and provide the command-line interface for it. Keep that in mind in case your module does something just by being required.
+
 ### How it works
 
 MagiCLI is capable of handling many styles of `exports`, like:
