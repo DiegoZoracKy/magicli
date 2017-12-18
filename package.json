@@ -1,6 +1,6 @@
 {
   "name": "magicli",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Automagically generates command-line interfaces (CLI) for any module. Expected options and help sections are created automatically based on parameters names, with support to async.",
   "main": "lib/magicli.js",
   "scripts": {
