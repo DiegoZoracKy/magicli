@@ -7,7 +7,7 @@ Just `require('magicli')();` and your module is ready to be executed via CLI.
 
 The main goal is to have any module prepared to be executed via CLI (installed globally with `-g`, or by using **npx**):
 
-To see why I believe you should plug it on your module, even if you don't need a CLI (probably someone on the community does need it), read here: [Introducing MagiCLI: Automagically generates a command-line interface (CLI) for any module
+To see why I believe you should plug it on your module, even if you don't need a CLI (it probably will serve someone on the community), read here: [Introducing MagiCLI: Automagically generates a command-line interface (CLI) for any module
 ](https://hackernoon.com/introducing-magicli-automagically-generates-a-command-line-interface-cli-for-any-module-49543e50f86d)
 
 ## Goals
