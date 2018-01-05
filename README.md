@@ -10,6 +10,8 @@ The main goal is to have any module prepared to be executed via CLI (installed g
 To see why I believe you should plug it on your module, even if you don't need a CLI (it probably will serve someone on the community), read here: [Introducing MagiCLI: Automagically generates a command-line interface (CLI) for any module
 ](https://hackernoon.com/introducing-magicli-automagically-generates-a-command-line-interface-cli-for-any-module-49543e50f86d)
 
+**It can be installed globally, in order to *execute* any module or .js file via CLI.**
+
 ## Goals
 
  * Minimal setup (*one line*)
@@ -19,6 +21,7 @@ To see why I believe you should plug it on your module, even if you don't need a
  * *Name*, *Description* and *Version* extracted from package.json
  * Simple API to hook into the execution flow (*stdin*, *before*, *after*)
  * Cover all possible cases of module.exports (*Function*, *Object* with nested properties, Destructuring parameters)
+ * Provide a CLI to be used to execute any given module or .js file via CLI
 
 ## Usage (the most simple and minimal way)
 
@@ -64,6 +67,51 @@ The program will be expecting options with the same name as the parameters decla
 `$ your-module --param2="K" --param1="Z"` would result in: `ZK`.
 
 Important: MagiCLI requires the module in order to analyse it, and provide the command-line interface for it. Keep that in mind in case your module does something just by being required.
+
+## Usage via CLI
+
+In order to **execute** any module or .js file via CLI, install it globally:
+
+```bash
+$ npm install magicli -g
+```
+
+Then just pass in as the first argument, the path to a module or a .js file. Examples:
+ * `$ magicli . --help`
+ * `$ magicli ./path/to-some-module --help`
+ * `$ magicli ./path/to-a-file.js --help`
+
+Or use it via **[npx](http://blog.npmjs.org/post/162869356040/introducing-npx-an-npm-package-runner)** without the need to install it.
+
+Let's suppose that you have a simple .js file as this one:
+
+```javascript
+module.exports = {
+	sum: (n1, n2) => n1 + n2,
+	ec: {
+		ho: str => `${str} !!!`
+	}
+}
+```
+
+Just execute **magicli** on it, as `$ magicli ./path/to-the-file-above.js --help` and you will get:
+
+```bash
+Commands:
+  sum
+  ec-ho
+```
+
+`$ magicli ./path/to-the-file-above.js sum --help` will give you:
+```bash
+Usage:
+  $ sum [options]
+
+Options:
+  --n1
+  --n2
+```
+and `$ magicli ./path/to-the-file-above.js sum --n1=4 --n2=2` will result in `6`
 
 ### How it works
 

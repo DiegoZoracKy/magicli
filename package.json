@@ -1,11 +1,11 @@
 {
   "name": "magicli",
-  "version": "0.1.0",
-  "description": "Automagically generates command-line interfaces (CLI) for any module. Expected options and help sections are created automatically based on parameters names, with support to async.",
+  "version": "0.1.1",
+  "description": "Automagically generates command-line interfaces (CLI) for any module. Expected options and help sections are created automatically based on parameters names, with support to async. It can be installed globally, in order to *execute* any module, or .js file, via CLI.",
   "main": "lib/magicli.js",
   "bin": "bin/cli.js",
   "scripts": {
-    "test": "mocha ./tests -b",
+    "test": "mocha ./tests",
     "test-main": "mocha ./tests/main.test.js",
     "test-cli": "mocha ./tests/cli.test.js"
   },
