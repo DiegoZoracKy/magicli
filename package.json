@@ -1,6 +1,6 @@
 {
   "name": "magicli",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Automagically generates command-line interfaces (CLI) for any module. Expected options and help sections are created automatically based on parameters names, with support to async. It can be installed globally, in order to *execute* any module, or .js file, via CLI.",
   "main": "lib/magicli.js",
   "bin": "bin/cli.js",
@@ -28,12 +28,12 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "cliss": "0.0.8",
+    "cliss": "0.0.9",
     "find-up": "^2.1.0",
     "for-each-property": "0.0.4",
     "inspect-property": "0.0.7"
   },
   "devDependencies": {
-    "mocha": "^4.0.1"
+    "mocha": "^8.2.1"
   }
 }
