@@ -28,12 +28,12 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "cliss": "^0.0.9",
+    "cliss": "0.0.9",
     "find-up": "^2.1.0",
     "for-each-property": "0.0.4",
     "inspect-property": "0.0.7"
   },
   "devDependencies": {
-    "mocha": "^4.0.1"
+    "mocha": "^8.2.1"
   }
 }
